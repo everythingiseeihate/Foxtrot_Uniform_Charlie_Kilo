@@ -1,7 +1,6 @@
 from Figure import *
 import turtle
 
-turtle.ht()
 
 # Создание Круга
 circle = Circle(50)
