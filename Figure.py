@@ -1,5 +1,4 @@
 import turtle
-import math
 
 
 class Circle:
@@ -7,35 +6,35 @@ class Circle:
         self.radius = radius
 
     def get_area(self):
-        return math.pi * self.radius ** 2
+        return 3.14 * self.radius ** 2
 
     def get_perimeter(self):
-        return 2 * math.pi * self.radius
+        return 2 * 3.14 * self.radius
 
-    def draw_figure(self, size, line_color, fill_color):
+    def drawing_figure(self, line_color, fill_color, size):
         turtle.pencolor(line_color)
         turtle.fillcolor(fill_color)
         turtle.begin_fill()
-        turtle.circle(size * self.radius)
+        turtle.circle(self.radius * size)
         turtle.end_fill()
 
 
 class Square:
-    def __init__(self, side_length):
-        self.side_length = side_length
+    def __init__(self, side):
+        self.side = side
 
     def get_area(self):
-        return self.side_length ** 2
+        return self.side ** 2
 
     def get_perimeter(self):
-        return 4 * self.side_length
+        return 4 * self.side
 
-    def draw_figure(self, size, line_color, fill_color):
+    def drawing_figure(self, line_color, fill_color, size):
         turtle.pencolor(line_color)
         turtle.fillcolor(fill_color)
         turtle.begin_fill()
-        for _ in range(4):
-            turtle.forward(size * self.side_length)
+        for i in range(4):
+            turtle.forward(self.side * size)
             turtle.left(90)
         turtle.end_fill()
 
@@ -51,97 +50,97 @@ class Rectangle:
     def get_perimeter(self):
         return 2 * (self.length + self.width)
 
-    def draw_figure(self, color, fill_color):
-        t = turtle.Turtle()
-        t.color(color)
-        t.fillcolor(fill_color)
-        t.begin_fill()
-        for i in range(2):
-            t.forward(self.width)
-            t.left(90)
-            t.forward(self.length)
-            t.left(90)
-        t.end_fill()
+    def drawing_figure(self, line_color, fill_color, size):
+        turtle.pencolor(line_color)
+        turtle.fillcolor(fill_color)
+        turtle.begin_fill()
+        turtle.forward(self.length * size)
+        turtle.left(90)
+        turtle.forward(self.width * size)
+        turtle.left(90)
+        turtle.forward(self.length * size)
+        turtle.left(90)
+        turtle.forward(self.width * size)
+        turtle.end_fill()
 
 
 class Triangle:
-    def __init__(self, side1, side2, side3, height):
-        self.side1 = side1
-        self.side2 = side2
-        self.side3 = side3
-        self.height = height
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
 
     def get_area(self):
-        return 0.5 * self.side1 * self.height
+        s = (self.a + self.b + self.c) / 2
+        return (s * (s - self.a) * (s - self.b) * (s - self.c)) ** 0.5
 
     def get_perimeter(self):
-        return self.side1 + self.side2 + self.side3
+        return self.a + self.b + self.c
 
-    def draw_figure(self, color, fill_color):
-        t = turtle.Turtle()
-        t.color(color)
-        t.fillcolor(fill_color)
-        t.begin_fill()
-        t.forward(self.side1)
-        t.left(120)
-        t.forward(self.side2)
-        t.left(120)
-        t.forward(self.side3)
-        t.left(120)
-        t.end_fill()
+    def drawing_figure(self, line_color, fill_color, size):
+        turtle.pencolor(line_color)
+        turtle.fillcolor(fill_color)
+        turtle.begin_fill()
+        turtle.forward(self.a * size)
+        turtle.left(120)
+        turtle.forward(self.b * size)
+        turtle.left(120)
+        turtle.forward(self.c * size)
+        turtle.end_fill()
 
 
 class Pentagon:
-    def __init__(self, side_length, color="black", fill_color=None):
-        self.side_length = side_length
-        self.color = color
-        self.fill_color = fill_color
+    def __init__(self, side):
+        self.side = side
 
     def get_area(self):
-        return 0.25 * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * self.side_length ** 2
+        return 0.25 * (5 * (5 + 2 * (5 ** 0.5)) * self.side ** 2) ** 0.5
 
     def get_perimeter(self):
-        return 5 * self.side_length
+        return 5 * self.side
 
-    def draw_figure(self, width=600, height=600):
-        turtle.clear()
-        turtle.hideturtle()
-        turtle.speed(0)
-        turtle.color(self.color, self.fill_color)
-        turtle.penup()
-        turtle.setposition(-width / 2, -height / 2)
-        turtle.pendown()
+    def drawing_figure(self, line_color, fill_color, size):
+        turtle.pencolor(line_color)
+        turtle.fillcolor(fill_color)
         turtle.begin_fill()
-        for _ in range(5):
-            turtle.forward(self.side_length)
-            turtle.right(72)
+        for i in range(5):
+            turtle.forward(self.side * size)
+            turtle.left(72)
         turtle.end_fill()
-        turtle.done()
 
 
 class Hexagon:
-    def __init__(self, side_length, color="black", fill_color=None):
-        self.side_length = side_length
-        self.color = color
-        self.fill_color = fill_color
+    def __init__(self, side):
+        self.side = side
 
     def get_area(self):
-        return 1.5 * math.sqrt(3) * self.side_length ** 2
+        return 1.5 * 3 ** 0.5 * self.side ** 2
 
     def get_perimeter(self):
-        return 6 * self.side_length
+        return 6 * self.side
 
-    def draw_figure(self, width=600, height=600):
-        turtle.clear()
-        turtle.hideturtle()
-        turtle.speed(0)
-        turtle.color(self.color, self.fill_color)
-        turtle.penup()
-        turtle.setposition(-width / 2, -height / 2)
-        turtle.pendown()
+    def drawing_figure(self, line_color, fill_color, size):
+        turtle.pencolor(line_color)
+
+
+class Ellipse:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def get_area(self):
+        return 3.14 * self.a * self.b
+
+    def get_perimeter(self):
+        h = ((self.a - self.b) / (self.a + self.b)) ** 2
+        return 3.14 * (self.a + self.b) * (1 + 3 * h / (10 + (4 - 3 * h) ** 0.5))
+
+    def drawing_figure(self, line_color, fill_color, size):
+        turtle.pencolor(line_color)
+        turtle.fillcolor(fill_color)
         turtle.begin_fill()
-        for _ in range(6):
-            turtle.forward(self.side_length)
-            turtle.right(60)
+        turtle.left(45)
+        for i in range(2):
+            turtle.circle(self.a * size, 90)
+            turtle.circle(self.b * size, 90)
         turtle.end_fill()
-        turtle.done()
