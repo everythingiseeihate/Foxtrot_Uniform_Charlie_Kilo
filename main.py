@@ -1,68 +1,45 @@
-from Figure import Circle, Square, Rectangle, Triangle, Pentagon, Hexagon
-import turtle
+from Figure import *
 
-# создание экземпляра класса Circle
-circle = Circle(5)
+# Создание экземпляра класса Circle
+circle = Circle(50)
+print("Площадь круга:", circle.get_area())
+print("Длина окружности:", circle.get_perimeter())
+circle.drawing_figure("red", "orange", 1)
 
-# расчет и вывод площади и периметра круга
-print("Circle area:", circle.get_area())
-print("Circle perimeter:", circle.get_perimeter())
+# Создание экземпляра класса Square
+square = Square(50)
+print("Площадь квадрата:", square.get_area())
+print("Периметр квадрата:", square.get_perimeter())
+square.drawing_figure("blue", "green", 1)
 
-# отрисовка круга с помощью черепашьей графики
-turtle.speed(1)
-circle.draw_figure(2, "blue", "green")
+# Создание экземпляра класса Rectangle
+rectangle = Rectangle(50, 100)
+print("Площадь прямоугольника:", rectangle.get_area())
+print("Периметр прямоугольника:", rectangle.get_perimeter())
+rectangle.drawing_figure("black", "yellow", 1)
 
-# создание экземпляра класса Square
-square = Square(10)
+# Создание экземпляра класса Triangle
+triangle = Triangle(50, 60, 70)
+print("Площадь треугольника:", triangle.get_area())
+print("Периметр треугольника:", triangle.get_perimeter())
+triangle.drawing_figure("purple", "pink", 1)
 
-# расчет и вывод площади и периметра квадрата
-print("Square area:", square.get_area())
-print("Square perimeter:", square.get_perimeter())
+# Создание экземпляра класса Pentagon
+pentagon = Pentagon(50)
+print("Площадь пятиугольника:", pentagon.get_area())
+print("Периметр пятиугольника:", pentagon.get_perimeter())
+pentagon.drawing_figure("brown", "grey", 1)
 
-# отрисовка квадрата с помощью черепашьей графики
-turtle.penup()
-turtle.setpos(0, -100)
-turtle.pendown()
-square.draw_figure(1.5, "red", "yellow")
+# Создание экземпляра класса Hexagon
+hexagon = Hexagon(50)
+print("Площадь шестиугольника:", hexagon.get_area())
+print("Периметр шестиугольника:", hexagon.get_perimeter())
+hexagon.drawing_figure("navy", "skyblue", 1)
 
-# Создаем прямоугольник со сторонами 4 и 6
-rect = Rectangle(4, 6)
-
-# Выводим площадь и периметр прямоугольника
-print("Площадь прямоугольника: ", rect.get_area())
-print("Периметр прямоугольника: ", rect.get_perimeter())
-
-# Рисуем прямоугольник с черной линией и красной заливкой
-rect.draw_figure("black", "red")
-
-# Создаем треугольник со сторонами 3, 4, 5 и высотой 2.5
-tri = Triangle(3, 4, 5, 2.5)
-
-# Выводим площадь и периметр треугольника
-print("Площадь треугольника: ", tri.get_area())
-print("Периметр треугольника: ", tri.get_perimeter())
-
-# Рисуем треугольник с зеленой линией и желтой заливкой
-tri.draw_figure("green", "yellow")
-
-# Создаем экземпляр класса Pentagon
-pentagon = Pentagon(side_length=100, color="red", fill_color="yellow")
-
-# Выводим площадь и периметр
-print("Pentagon area:", pentagon.get_area())
-print("Pentagon perimeter:", pentagon.get_perimeter())
-
-# Рисуем пятиугольник
-pentagon.draw_figure()
-
-# Создаем экземпляр класса Hexagon
-hexagon = Hexagon(side_length=100, color="blue", fill_color="green")
-
-# Выводим площадь и периметр
-print("Hexagon area:", hexagon.get_area())
-print("Hexagon perimeter:", hexagon.get_perimeter())
-
-# Рисуем шестиугольник
-hexagon.draw_figure()
+# Создание экземпляра класса Ellipse
+ellipse = Ellipse(50, 100)
+print("Площадь эллипса:", ellipse.get_area())
+print("Длина периметра эллипса:", ellipse.get_perimeter())
+ellipse.drawing_figure("maroon", "violet", 1)
 
 turtle.done()
