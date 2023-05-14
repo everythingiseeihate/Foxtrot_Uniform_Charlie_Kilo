@@ -3,6 +3,8 @@ import turtle
 
 class Circle:
     def __init__(self, radius):
+        assert isinstance(radius, (int, float)), "Ошибка: радиус должен быть положительным числом"
+        assert radius > 0, "Ошибка: радиус должен быть положительным числом"
         self.radius = radius
 
     def get_area(self):
@@ -21,6 +23,8 @@ class Circle:
 
 class Square:
     def __init__(self, side):
+        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть положительным числом"
+        assert side > 0, "Ошибка: сторона должна быть положительным числом"
         self.side = side
 
     def get_area(self):
@@ -41,6 +45,10 @@ class Square:
 
 class Rectangle:
     def __init__(self, length, width):
+        assert isinstance(length, (int, float)), "Ошибка: длина должна быть положительным числом"
+        assert length > 0, "Ошибка: длина должна быть положительным числом"
+        assert isinstance(width, (int, float)), "Ошибка: ширина должна быть положительным числом"
+        assert width > 0, "Ошибка: ширина должна быть положительным числом"
         self.length = length
         self.width = width
 
@@ -66,6 +74,12 @@ class Rectangle:
 
 class Triangle:
     def __init__(self, a, b, c):
+        assert isinstance(a, (int, float)), "Ошибка: сторона a должна быть положительным числом"
+        assert a > 0, "Ошибка: сторона a должна быть положительным числом"
+        assert isinstance(b, (int, float)), "Ошибка: сторона b должна быть положительным числом"
+        assert b > 0, "Ошибка: сторона b должна быть положительным числом"
+        assert isinstance(c, (int, float)), "Ошибка: сторона c должна быть положительным числом"
+        assert c > 0, "Ошибка: сторона c должна быть положительным числом"
         self.a = a
         self.b = b
         self.c = c
@@ -91,6 +105,8 @@ class Triangle:
 
 class Pentagon:
     def __init__(self, side):
+        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть положительным числом"
+        assert side > 0, "Ошибка: сторона должна быть положительным числом"
         self.side = side
 
     def get_area(self):
@@ -111,6 +127,8 @@ class Pentagon:
 
 class Hexagon:
     def __init__(self, side):
+        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть положительным числом"
+        assert side > 0, "Ошибка: сторона должна быть положительным числом"
         self.side = side
 
     def get_area(self):
@@ -125,6 +143,10 @@ class Hexagon:
 
 class Ellipse:
     def __init__(self, a, b):
+        assert isinstance(a, (int, float)), "Ошибка: сторона a должна быть положительным числом"
+        assert a > 0, "Ошибка: сторона a должна быть положительным числом"
+        assert isinstance(b, (int, float)), "Ошибка: сторона b должна быть положительным числом"
+        assert b > 0, "Ошибка: сторона b должна быть положительным числом"
         self.a = a
         self.b = b
 
