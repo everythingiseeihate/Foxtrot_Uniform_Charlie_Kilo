@@ -3,9 +3,9 @@ import turtle
 
 class Circle:
     def __init__(self, radius):
-        assert isinstance(radius, (int, float)), "Ошибка: радиус должен быть числом"
-        assert radius > 0, "Ошибка: радиус должен быть больше 0"
         self.radius = radius
+        assert isinstance(self.radius, (int, float)), "Ошибка: радиус должен быть числом"
+        assert self.radius > 0, "Ошибка: радиус должен быть больше 0"
 
     def get_area(self):
         return 3.14 * self.radius ** 2
@@ -23,9 +23,9 @@ class Circle:
 
 class Square:
     def __init__(self, side):
-        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть числом"
-        assert side > 0, "Ошибка: сторона должна быть больше 0"
         self.side = side
+        assert isinstance(self.side, (int, float)), "Ошибка: сторона должна быть числом"
+        assert self.side > 0, "Ошибка: сторона должна быть больше 0"
 
     def get_area(self):
         return self.side ** 2
@@ -45,12 +45,12 @@ class Square:
 
 class Rectangle:
     def __init__(self, length, width):
-        assert isinstance(length, (int, float)), "Ошибка: длина должна быть числом"
-        assert length > 0, "Ошибка: длина должна быть больше 0"
-        assert isinstance(width, (int, float)), "Ошибка: ширина должна быть числом"
-        assert width > 0, "Ошибка: ширина должна быть больше 0"
         self.length = length
         self.width = width
+        assert isinstance(self.length, (int, float)), "Ошибка: длина должна быть числом"
+        assert self.length > 0, "Ошибка: длина должна быть больше 0"
+        assert isinstance(self.width, (int, float)), "Ошибка: ширина должна быть числом"
+        assert self.width > 0, "Ошибка: ширина должна быть больше 0"
 
     def get_area(self):
         return self.length * self.width
@@ -74,15 +74,15 @@ class Rectangle:
 
 class Triangle:
     def __init__(self, a, b, c):
-        assert isinstance(a, (int, float)), "Ошибка: сторона a должна быть числом"
-        assert a > 0, "Ошибка: сторона a должна быть больше 0"
-        assert isinstance(b, (int, float)), "Ошибка: сторона b должна быть числом"
-        assert b > 0, "Ошибка: сторона b должна быть больше 0"
-        assert isinstance(c, (int, float)), "Ошибка: сторона c должна быть числом"
-        assert c > 0, "Ошибка: сторона c должна быть больше 0"
         self.a = a
         self.b = b
         self.c = c
+        assert isinstance(self.a, (int, float)), "Ошибка: сторона a должна быть числом"
+        assert self.a > 0, "Ошибка: сторона a должна быть больше 0"
+        assert isinstance(self.b, (int, float)), "Ошибка: сторона b должна быть числом"
+        assert self.b > 0, "Ошибка: сторона b должна быть больше 0"
+        assert isinstance(self.c, (int, float)), "Ошибка: сторона c должна быть числом"
+        assert self.c > 0, "Ошибка: сторона c должна быть больше 0"
 
     def get_area(self):
         s = (self.a + self.b + self.c) / 2
@@ -108,9 +108,9 @@ class Triangle:
 
 class Pentagon:
     def __init__(self, side):
-        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть числом"
-        assert side > 0, "Ошибка: сторона должна быть больше 0"
         self.side = side
+        assert isinstance(self.side, (int, float)), "Ошибка: сторона должна быть числом"
+        assert self.side > 0, "Ошибка: сторона должна быть больше 0"
 
     def get_area(self):
         return 0.25 * (5 * (5 + 2 * (5 ** 0.5)) * self.side ** 2) ** 0.5
@@ -130,9 +130,9 @@ class Pentagon:
 
 class Hexagon:
     def __init__(self, side):
-        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть числом"
-        assert side > 0, "Ошибка: сторона должна быть больше 0"
         self.side = side
+        assert isinstance(self.side, (int, float)), "Ошибка: сторона должна быть числом"
+        assert self.side > 0, "Ошибка: сторона должна быть больше 0"
 
     def get_area(self):
         return (3 * (3 ** 0.5) * self.side ** 2) / 2
@@ -152,12 +152,12 @@ class Hexagon:
 
 class Ellipse:
     def __init__(self, a, b):
-        assert isinstance(a, (int, float)), "Ошибка: сторона a должна быть числом"
-        assert a > 0, "Ошибка: сторона a должна быть больше 0"
-        assert isinstance(b, (int, float)), "Ошибка: сторона b должна быть числом"
-        assert b > 0, "Ошибка: сторона b должна быть больше 0"
         self.a = a
         self.b = b
+        assert isinstance(self.a, (int, float)), "Ошибка: сторона a должна быть числом"
+        assert self.a > 0, "Ошибка: сторона a должна быть больше 0"
+        assert isinstance(self.b, (int, float)), "Ошибка: сторона b должна быть числом"
+        assert self.b > 0, "Ошибка: сторона b должна быть больше 0"
 
     def get_area(self):
         return 3.14 * self.a * self.b
