@@ -3,8 +3,8 @@ import turtle
 
 class Circle:
     def __init__(self, radius):
-        assert isinstance(radius, (int, float)), "Ошибка: радиус должен быть положительным числом"
-        assert radius > 0, "Ошибка: радиус должен быть положительным числом"
+        assert isinstance(radius, (int, float)), "Ошибка: радиус должен быть числом"
+        assert radius > 0, "Ошибка: радиус должен быть больше 0"
         self.radius = radius
 
     def get_area(self):
@@ -23,8 +23,8 @@ class Circle:
 
 class Square:
     def __init__(self, side):
-        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть положительным числом"
-        assert side > 0, "Ошибка: сторона должна быть положительным числом"
+        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть числом"
+        assert side > 0, "Ошибка: сторона должна быть больше 0"
         self.side = side
 
     def get_area(self):
@@ -45,10 +45,10 @@ class Square:
 
 class Rectangle:
     def __init__(self, length, width):
-        assert isinstance(length, (int, float)), "Ошибка: длина должна быть положительным числом"
-        assert length > 0, "Ошибка: длина должна быть положительным числом"
-        assert isinstance(width, (int, float)), "Ошибка: ширина должна быть положительным числом"
-        assert width > 0, "Ошибка: ширина должна быть положительным числом"
+        assert isinstance(length, (int, float)), "Ошибка: длина должна быть числом"
+        assert length > 0, "Ошибка: длина должна быть больше 0"
+        assert isinstance(width, (int, float)), "Ошибка: ширина должна быть числом"
+        assert width > 0, "Ошибка: ширина должна быть больше 0"
         self.length = length
         self.width = width
 
@@ -74,12 +74,12 @@ class Rectangle:
 
 class Triangle:
     def __init__(self, a, b, c):
-        assert isinstance(a, (int, float)), "Ошибка: сторона a должна быть положительным числом"
-        assert a > 0, "Ошибка: сторона a должна быть положительным числом"
-        assert isinstance(b, (int, float)), "Ошибка: сторона b должна быть положительным числом"
-        assert b > 0, "Ошибка: сторона b должна быть положительным числом"
-        assert isinstance(c, (int, float)), "Ошибка: сторона c должна быть положительным числом"
-        assert c > 0, "Ошибка: сторона c должна быть положительным числом"
+        assert isinstance(a, (int, float)), "Ошибка: сторона a должна быть числом"
+        assert a > 0, "Ошибка: сторона a должна быть больше 0"
+        assert isinstance(b, (int, float)), "Ошибка: сторона b должна быть числом"
+        assert b > 0, "Ошибка: сторона b должна быть больше 0"
+        assert isinstance(c, (int, float)), "Ошибка: сторона c должна быть числом"
+        assert c > 0, "Ошибка: сторона c должна быть больше 0"
         self.a = a
         self.b = b
         self.c = c
@@ -91,7 +91,10 @@ class Triangle:
     def get_perimeter(self):
         return self.a + self.b + self.c
 
+    turtle.ht()
+
     def drawing_figure(self, line_color, fill_color, size):
+        turtle.ht()
         turtle.pencolor(line_color)
         turtle.fillcolor(fill_color)
         turtle.begin_fill()
@@ -105,8 +108,8 @@ class Triangle:
 
 class Pentagon:
     def __init__(self, side):
-        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть положительным числом"
-        assert side > 0, "Ошибка: сторона должна быть положительным числом"
+        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть числом"
+        assert side > 0, "Ошибка: сторона должна быть больше 0"
         self.side = side
 
     def get_area(self):
@@ -127,26 +130,32 @@ class Pentagon:
 
 class Hexagon:
     def __init__(self, side):
-        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть положительным числом"
-        assert side > 0, "Ошибка: сторона должна быть положительным числом"
+        assert isinstance(side, (int, float)), "Ошибка: сторона должна быть числом"
+        assert side > 0, "Ошибка: сторона должна быть больше 0"
         self.side = side
 
     def get_area(self):
-        return 1.5 * 3 ** 0.5 * self.side ** 2
+        return (3 * (3 ** 0.5) * self.side ** 2) / 2
 
     def get_perimeter(self):
         return 6 * self.side
 
     def drawing_figure(self, line_color, fill_color, size):
         turtle.pencolor(line_color)
+        turtle.fillcolor(fill_color)
+        turtle.begin_fill()
+        for i in range(6):
+            turtle.forward(self.side * size)
+            turtle.right(60)
+        turtle.end_fill()
 
 
 class Ellipse:
     def __init__(self, a, b):
-        assert isinstance(a, (int, float)), "Ошибка: сторона a должна быть положительным числом"
-        assert a > 0, "Ошибка: сторона a должна быть положительным числом"
-        assert isinstance(b, (int, float)), "Ошибка: сторона b должна быть положительным числом"
-        assert b > 0, "Ошибка: сторона b должна быть положительным числом"
+        assert isinstance(a, (int, float)), "Ошибка: сторона a должна быть числом"
+        assert a > 0, "Ошибка: сторона a должна быть больше 0"
+        assert isinstance(b, (int, float)), "Ошибка: сторона b должна быть числом"
+        assert b > 0, "Ошибка: сторона b должна быть больше 0"
         self.a = a
         self.b = b
 
