@@ -83,6 +83,7 @@ class Triangle:
         assert self.b > 0, "Ошибка: сторона b должна быть больше 0"
         assert isinstance(self.c, (int, float)), "Ошибка: сторона c должна быть числом"
         assert self.c > 0, "Ошибка: сторона c должна быть больше 0"
+        assert a + b > c and a + c > b and b + c > a, "Ошибка: сумма двух сторон треугольника должна быть больше третьей"
 
     def get_area(self):
         s = (self.a + self.b + self.c) / 2
